@@ -1,0 +1,31 @@
+version: '3'
+services:
+  myapp:
+    command: ["npm", "start"]
+    image: react-test:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.react
+    environment:
+      - PORT=80
+    ports:
+      - "3000:80"
+    volumes:
+      - ./myapp:/root/myapp
+      - ./.vscode-server:/root/.vscode-server
+
+  backend:
+    command: ["python","manage.py","runserver", "0.0.0.0:80"]
+    image: backend-test:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.django
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/root/backend
+      - ./.vscode-server:/root/.vscode-server
+      
