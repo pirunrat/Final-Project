@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css';
+import '../css/Login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,8 +26,10 @@ function Login({setAuthenticated}) {
       localStorage.setItem('token', response.data.token)
       if(localStorage.getItem('token') !== null){
         setAuthenticated(true)
+        console.log("True")
       }else{
         setAuthenticated(false)
+        console.log("False")
       }
       
     } catch (error) {
@@ -49,7 +51,9 @@ function Login({setAuthenticated}) {
           <label>Password:</label>
           <input type="password" value={password} onChange={handlePasswordChange} required />
         </div>
-        <button type="submit">Login</button>
+        <div className='submit-container'>
+          <button type="submit">Login</button>
+        </div>
       </form>
     </div>
   );

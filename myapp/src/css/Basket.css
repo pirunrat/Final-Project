@@ -1,0 +1,48 @@
+
+  /* Basket container */
+  .main-basket-content {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .main-basket-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .main-basket-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .main-basket-content li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .main-basket-content li:last-child {
+    border-bottom: none;
+  }
+  
+  .main-basket-content button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .main-basket-content button:hover {
+    background-color: #0056b3;
+  }
+  
